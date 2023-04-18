@@ -53,13 +53,19 @@ target_link_libraries(otel-grpc-export-demo PRIVATE ${OPENTELEMETRY_CPP_LIBRARIE
 # 关键内容
 ```
 
-2. 编译demo项目
+2. 修改 grpc_exporter.cc 
+
+- 替换 `<gRPC-endpoint>` 和 `<gRPC-token>`，请从 [链路追踪控制台](https://tracing.console.aliyun.com/#/globalSetting) -> 集群配置 -> 接入点信息 -> OpenTelemetry 中查看
+- 请将 `<your-service-name>` 替换为您的应用名
+- 请将 `<your-host-name>` 替换为您的主机名
+
+3. 编译demo项目
 
 ```
 mkdir build && cd build && cmake .. && make 
 ```
 
-3. 运行
+4. 运行
 
 ```
 ./otel-grpc-export-demo
@@ -93,13 +99,19 @@ target_link_libraries(otel-http-export-demo PRIVATE ${OPENTELEMETRY_CPP_LIBRARIE
 # 关键内容
 ```
 
-2. 编译demo项目
+2. 修改 http_exporter.cc 
+
+- 替换 `<http-endpoint>`，请从 [链路追踪控制台](https://tracing.console.aliyun.com/#/globalSetting) -> 集群配置 -> 接入点信息 -> OpenTelemetry 中查看
+- 请将 `<your-service-name>` 替换为您的应用名
+- 请将 `<your-host-name>` 替换为您的主机名
+
+3. 编译demo项目
 
 ```
 mkdir build && cd build && cmake .. && make 
 ```
 
-3. 运行
+4. 运行
 
 ```
 ./otel-http-export-demo
